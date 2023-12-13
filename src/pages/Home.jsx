@@ -23,11 +23,14 @@ export default function Home(){
 
     const [userProperties, setUserProperties] = useState({});
 
+    const db = getFirestore(firebaseApp);
+
     useEffect(() =>{
 
 
         // initialize cloud firestore and get a reference to the service
-        const db = getFirestore(firebaseApp);
+
+        
 
         try{
             
@@ -45,7 +48,7 @@ export default function Home(){
             });
 
         }catch(e){
-            alert("error")
+            alert("error", error)
         }
 
         // will check if the user is login
@@ -69,9 +72,7 @@ export default function Home(){
 
     // create 
     const addEmployee = () => {
-      // Initialize cloud firestore and get a reference to the service
-      const db = getFirestore(firebaseApp);
-    
+      // Initialize cloud firestore and get a reference to the service    
       // Check for missing required fields
       if (
         employee.firstname === '' ||
@@ -115,15 +116,18 @@ export default function Home(){
     // delete function
 
     const deleteEmployee = (employeeID, firstname, lastname) => {
-
-        // initialize cloud firestore and get a reference to the service
-        const db = getFirestore(firebaseApp);
-
-        confirm(`Are you sure you want to delete ${firstname} ${lastname}?`).then(
-            deleteDoc(doc(db, "employees", employeeID))
-       );
-    
-    }
+      const confirmation = window.confirm(`Are you sure you want to delete ${firstname} ${lastname}?`);
+      if (confirmation) {
+        deleteDoc(doc(db, "employees", employeeID))
+          .then(() => {
+            console.log(`${firstname} ${lastname} deleted successfully`);
+          })
+          .catch((error) => {
+            console.error("Error deleting employee: ", error);
+            // Handle error if deletion fails
+          });
+      }
+    };
 
 
     // update employee/ edit
@@ -144,8 +148,6 @@ export default function Home(){
     
 
   const handleEmployeeUpdate = () => {
-    const db = getFirestore(firebaseApp);
-
     const employeeRef = doc(db, "employees", employee.employeeID);
 
     updateDoc(employeeRef, {
@@ -176,13 +178,15 @@ export default function Home(){
 
     if(authenticated){
       return (
-        <section className="container">
+        <section className="container" style={{ background: '#f0f0f0', padding: '20px', borderRadius: '5px' }}>
           <h1 className="fw-bold text-center">🎓Employee Record🎓</h1>
           <h3 className="fw-bold">Hello, {userProperties.displayName} </h3>
           <p>This is the list of employee records.</p>
+
+          
           
             {/* Button trigger modal */}
-            <button type="button" className="btn btn-dark mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
               Add employee
             </button>
 
@@ -307,6 +311,7 @@ export default function Home(){
                         <button
                           onClick={handleEmployeeUpdate}
                           className="btn btn-success mt-4"
+                          data-bs-dismiss="modal"
                         >
                           Update
                         </button>
@@ -314,6 +319,8 @@ export default function Home(){
                         <button
                           onClick={addEmployee}
                           className="btn btn-dark mt-4"
+                          type="button"
+                          data-bs-dismiss="modal"
                         >
                           Add➕
                         </button>
@@ -343,8 +350,23 @@ export default function Home(){
           
           (
             <>
+            {/* <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Address</th>
+              <th scope="col">Department</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          </table>
+           */}
               {employeeList.map((employeeRecord) => (
-                <Employee
+                
+                  <Employee
                 key={employeeRecord.employee_id}
                 firstname={employeeRecord.firstname}
                 lastname={employeeRecord.lastname}
@@ -356,8 +378,13 @@ export default function Home(){
                 updateEmployee={updateEmployee}
                 employeeID={employeeRecord.employee_id}
               />
+
+               
+                
               
               ))}
+
+   
             </>
           )}
         </section>
