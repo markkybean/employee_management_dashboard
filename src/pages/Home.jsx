@@ -176,6 +176,22 @@ export default function Home(){
   };
     
 
+  const handleViewMore = (employeeID) => {
+    // Find the specific employee in the list based on employeeID
+    const selectedEmployee = employeeList.find(employee => employee.employee_id === employeeID);
+  
+    if (selectedEmployee) {
+      // Handle displaying the details of the selectedEmployee
+      // You can set the detailed employee information in the state or display it directly
+      console.log(selectedEmployee); // Display in console for testing
+      // Add logic to display the employee details (e.g., open a modal or update state)
+    } else {
+      console.error('Employee not found');
+    }
+  };
+  
+  
+
     if(authenticated){
       return (
         <section className="container" style={{ background: '#f0f0f0', padding: '20px', borderRadius: '5px' }}>
@@ -290,7 +306,30 @@ export default function Home(){
                         className="form-control"
                         id="department"
                       />
+                        {/* <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                          <select class="form-select" onChange={(e) =>
+                            setEmployee({
+                              ...employee,
+                              department: e.target.value,
+                            })
+                          }
+                            value={employee.department}
+                            type="text"
+                            className="form-control"
+                            id="department">
+                            <option selected>Choose...</option>
+                            <option value="1">Front-End Development Team</option>
+                            <option value="2">Back-End Development Team</option>
+                            <option value="3">Full-Stack Development Unit</option>
+                            <option value="4">Project Planning and Execution</option>
+                            <option value="5">Quality Assurance and Testing</option>
+                            <option value="6">Agile Development Team</option>
+                          </select>
+                        </div> */}
                     </div>
+
+                    
 
 
 
@@ -371,6 +410,7 @@ export default function Home(){
                 department={employeeRecord.department}
                 deleteEmployee={deleteEmployee}
                 updateEmployee={updateEmployee}
+                handleViewMore={handleViewMore}
                 employeeID={employeeRecord.employee_id}
               />
 
