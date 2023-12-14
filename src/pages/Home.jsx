@@ -179,14 +179,14 @@ export default function Home(){
     if(authenticated){
       return (
         <section className="container" style={{ background: '#f0f0f0', padding: '20px', borderRadius: '5px' }}>
-          <h1 className="fw-bold text-center">🎓Employee Record🎓</h1>
+          <h1 className="fw-bold text-center"></h1>
           <h3 className="fw-bold">Hello, {userProperties.displayName} </h3>
           <p>This is the list of employee records.</p>
 
           
           
             {/* Button trigger modal */}
-            <button type="button" className="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-dark mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Add employee
             </button>
 
@@ -198,8 +198,8 @@ export default function Home(){
                     <h1 className="modal-title fs-5" id="exampleModalLabel">Add Employee Information</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div className="modal-body">
-                  <div className="mb-5 p-5 border bg-dark-subtle shadow-lg">
+                  <div className="modal-body mt-5">
+                  <div className="mb-5 p-5 border shadow-lg" style={{ background: '#f0f0f0', padding: '20px', borderRadius: '5px' }}>
                   <div className="row">
                     <div className="col-md-5 col-lg-5 col-sm-12">
                       <label htmlFor="firstname">First name:</label>
@@ -310,7 +310,7 @@ export default function Home(){
                       {editToggle ? (
                         <button
                           onClick={handleEmployeeUpdate}
-                          className="btn btn-success mt-4"
+                          className="btn btn-success mt-4 float-end"
                           data-bs-dismiss="modal"
                         >
                           Update
@@ -318,7 +318,7 @@ export default function Home(){
                       ) : (
                         <button
                           onClick={addEmployee}
-                          className="btn btn-dark mt-4"
+                          className="btn btn-dark mt-4 float-end"
                           type="button"
                           data-bs-dismiss="modal"
                         >
@@ -350,20 +350,15 @@ export default function Home(){
           
           (
             <>
-            {/* <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">Address</th>
-              <th scope="col">Department</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          </table>
-           */}
+                <div className="row ms-1 border shadow m-auto mb-3">
+                  <div className="col-3">
+                    <h3>Name</h3>
+                  </div>
+                  <div className="col-3">
+                    <h3>Department</h3>
+                  </div>
+                </div>
+          
               {employeeList.map((employeeRecord) => (
                 
                   <Employee

@@ -45,7 +45,7 @@ export default function Layout(){
         <main className="d-flex flex-column min-vh-100">
             <nav className="navbar navbar-expand-lg bg-dark-subtle">
                 <div className="container-fluid">
-                    <Link className="navbar-brand fw-bold" to="/">Home</Link>
+                    <Link className="navbar-brand fw-bold" to="/">MarkTech</Link>
                     <button className="navbar-toggler bg-light-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
