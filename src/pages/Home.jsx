@@ -252,7 +252,7 @@ export default function Home(){
                   <div className="modal-body mt-5">
                   <div className="mb-5 p-5 border shadow-lg" style={{ background: '#f0f0f0', padding: '20px', borderRadius: '5px' }}>
                   <div className="row">
-                    <div className="col-md-5 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="firstname">First name:</label>
                       <input
                         onChange={(e) =>
@@ -267,7 +267,7 @@ export default function Home(){
                         id="firstname"
                       />
                     </div>
-                    <div className="col-md-4 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="lastname">Last name:</label>
                       <input
                         onChange={(e) =>
@@ -282,7 +282,7 @@ export default function Home(){
                         id="lastname"
                       />
                     </div>
-                    <div className="col-md-4 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="email">Email:</label>
                       <input
                         onChange={(e) =>
@@ -297,7 +297,7 @@ export default function Home(){
                         id="email"
                       />
                     </div>
-                    <div className="col-md-4 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="phoneNumber">Phone Number:</label>
                       <input
                         onChange={(e) =>
@@ -312,7 +312,7 @@ export default function Home(){
                         id="phoneNumber"
                       />
                     </div>
-                    <div className="col-md-4 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="address">Address:</label>
                       <input
                         onChange={(e) =>
@@ -327,7 +327,7 @@ export default function Home(){
                         id="address"
                       />
                     </div>
-                    <div className="col-md-4 col-lg-5 col-sm-12">
+                    <div className="col-md-6 col-sm-12">
                       <label htmlFor="department">Department/Team:</label>
                       <input
                         onChange={(e) =>

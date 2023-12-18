@@ -81,34 +81,34 @@
                     ></button>
                   </div>
                   <div className="modal-body">
-                    <div className="mb-5 p-5 border mt-5 shadow-lg">
+                    <div className="mb-5 p-5 border mt-5 shadow-md">
                       <div className="card-body">
                         <div className="table-responsive">
                           <table className="table">
-                            <tbody>
-                              <tr>
-                                <th scope="row">First Name</th>
-                                <td>{firstname}</td>
+                            <tbody className="row m-2 border p-2 shadow">
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">First Name</th>
+                                <td className="col-md-6 col-sm-12">{firstname}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">Last Name</th>
-                                <td>{lastname}</td>
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">Last Name</th>
+                                <td className="col-md-6 col-sm-12">{lastname}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">Email</th>
-                                <td>{email}</td>
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">Email</th>
+                                <td className="col-md-6 col-sm-12">{email}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">Phone Number</th>
-                                <td>{phoneNumber}</td>
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">Phone Number</th>
+                                <td className="col-md-6 col-sm-12">{phoneNumber}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">Address</th>
-                                <td>{address}</td>
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">Address</th>
+                                <td className="col-md-6 col-sm-12">{address}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">Department</th>
-                                <td>{department}</td>
+                              <tr className="row">
+                                <th className="col-md-6 col-sm-12" scope="row">Department</th>
+                                <td className="col-md-6 col-sm-12">{department}</td>
                               </tr>
                             </tbody>
                           </table>
