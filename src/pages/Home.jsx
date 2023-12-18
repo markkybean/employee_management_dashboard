@@ -23,6 +23,9 @@ export default function Home(){
 
     const [userProperties, setUserProperties] = useState({});
 
+
+
+
     const db = getFirestore(firebaseApp);
 
     useEffect(() =>{
@@ -176,19 +179,51 @@ export default function Home(){
   };
     
 
-  const handleViewMore = (employeeID) => {
-    // Find the specific employee in the list based on employeeID
+  const handleViewMore = (employeeID, firstname, lastname, email, phoneNumber, address, department) => {
     const selectedEmployee = employeeList.find(employee => employee.employee_id === employeeID);
   
     if (selectedEmployee) {
-      // Handle displaying the details of the selectedEmployee
-      // You can set the detailed employee information in the state or display it directly
-      console.log(selectedEmployee); // Display in console for testing
-      // Add logic to display the employee details (e.g., open a modal or update state)
+      // Display more details or perform actions with the selected employee's information
+      console.log(selectedEmployee); // For testing purposes
+  
+      // Update state or perform actions to display more details of the selected employee
+      // For example:
+      // setSelectedEmployee(selectedEmployee);
+      // Open a modal to display the employee's details
     } else {
       console.error('Employee not found');
     }
+  
+    // Also, set the employee's information in the state to enable editing or other operations
+    // setEmployee({
+    //   employeeID: employeeID,
+    //   firstname: firstname,
+    //   lastname: lastname,
+    //   email: email,
+    //   phoneNumber: phoneNumber,
+    //   address: address,
+    //   department: department,
+    //   // Add other fields as needed
+    // });
   };
+  
+  
+  
+  // const handleViewMore = (employeeID) => {
+  //   const selectedEmployee = employeeList.find(employee => employee.employee_id === employeeID);
+    
+  //   if (selectedEmployee) {
+  //     setSelectedEmployeeID(employeeID);
+  //     setSelectedEmployee(selectedEmployee);
+  //   } else {
+  //     console.error('Employee not found');
+  //   }
+  // };
+  
+  
+  
+  
+
   
   
 
@@ -389,7 +424,7 @@ export default function Home(){
           
           (
             <>
-                <div className="row ms-1 border shadow m-auto mb-3">
+                <div className="row ms-1 border shadow m-auto mb-3 pt-3 pb-3">
                   <div className="col-3">
                     <h3>Name</h3>
                   </div>
