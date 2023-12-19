@@ -193,39 +193,7 @@ export default function Home(){
     } else {
       console.error('Employee not found');
     }
-  
-    // Also, set the employee's information in the state to enable editing or other operations
-    // setEmployee({
-    //   employeeID: employeeID,
-    //   firstname: firstname,
-    //   lastname: lastname,
-    //   email: email,
-    //   phoneNumber: phoneNumber,
-    //   address: address,
-    //   department: department,
-    //   // Add other fields as needed
-    // });
   };
-  
-  
-  
-  // const handleViewMore = (employeeID) => {
-  //   const selectedEmployee = employeeList.find(employee => employee.employee_id === employeeID);
-    
-  //   if (selectedEmployee) {
-  //     setSelectedEmployeeID(employeeID);
-  //     setSelectedEmployee(selectedEmployee);
-  //   } else {
-  //     console.error('Employee not found');
-  //   }
-  // };
-  
-  
-  
-  
-
-  
-  
 
     if(authenticated){
       return (
