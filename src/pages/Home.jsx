@@ -297,7 +297,7 @@ export default function Home(){
                     </div>
                     <div className="col-md-6 col-sm-12">
                       <label htmlFor="department">Department/Team:</label>
-                      <input
+                      {/* <input
                         onChange={(e) =>
                           setEmployee({
                             ...employee,
@@ -308,9 +308,8 @@ export default function Home(){
                         type="text"
                         className="form-control"
                         id="department"
-                      />
-                        {/* <div class="input-group mb-3">
-                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                      /> */}
+                        <div class="input-group mb-3">
                           <select class="form-select" onChange={(e) =>
                             setEmployee({
                               ...employee,
@@ -322,14 +321,15 @@ export default function Home(){
                             className="form-control"
                             id="department">
                             <option selected>Choose...</option>
-                            <option value="1">Front-End Development Team</option>
-                            <option value="2">Back-End Development Team</option>
-                            <option value="3">Full-Stack Development Unit</option>
-                            <option value="4">Project Planning and Execution</option>
-                            <option value="5">Quality Assurance and Testing</option>
-                            <option value="6">Agile Development Team</option>
+                            <option value="Front-End Development Team">Front-End Development Team</option>
+                            <option value="Back-End Development Team">Back-End Development Team</option>
+                            <option value="Full-Stack Development Unit">Full-Stack Development Unit</option>
+                            <option value="Project Planning and Execution">Project Planning and Execution</option>
+                            <option value="Quality Assurance and Testing">Quality Assurance and Testing</option>
+                            <option value="Agile Development Team">Agile Development Team</option>
                           </select>
-                        </div> */}
+                        </div>
+                        
                     </div>
 
                     
