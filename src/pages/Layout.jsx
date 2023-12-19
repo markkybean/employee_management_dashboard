@@ -51,7 +51,7 @@ export default function Layout(){
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Link className="nav-item nav-link" to="Services">Services</Link>
                         </li>
                         <li className="nav-item">
@@ -59,7 +59,7 @@ export default function Layout(){
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="contact">Contact</Link>
-                        </li>
+                        </li> */}
 
                         </ul>
                        
